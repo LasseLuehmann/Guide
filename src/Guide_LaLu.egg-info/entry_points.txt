@@ -1,0 +1,2 @@
+[console_scripts]
+guide = Guide_LaLu.guide:main

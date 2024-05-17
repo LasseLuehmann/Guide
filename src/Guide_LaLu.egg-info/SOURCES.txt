@@ -1,0 +1,12 @@
+LICENCE
+README.md
+pyproject.toml
+src/__init__.py
+src/Guide_LaLu/__init__.py
+src/Guide_LaLu/guide.py
+src/Guide_LaLu/operation.py
+src/Guide_LaLu.egg-info/PKG-INFO
+src/Guide_LaLu.egg-info/SOURCES.txt
+src/Guide_LaLu.egg-info/dependency_links.txt
+src/Guide_LaLu.egg-info/entry_points.txt
+src/Guide_LaLu.egg-info/top_level.txt

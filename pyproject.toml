@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Guide_LaLu"
+version = "0.0.5"
+authors = [
+   { name="Lasse Lühmann", email="waffl669@yahoo.de" },
+]
+license = {file = "LICENSE"}
+description = "A Guide to find your stuff in terminal"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+   "Development Status :: 3 - Alpha",
+   "Intended Audience :: Education",
+   "Programming Language :: Python :: 3",
+   "License :: OSI Approved :: MIT License",
+   "Operating System :: OS Independent",
+]
+keywords = ["elongated arm", "user"]
+# dependencies = ["package-name >= version",]
+
+#[project.optional-dependencies]
+#dev = ["pytest", "isort"]
+
+[project.urls]
+#"Homepage": ""
+#"documentation" = ""
+#"source" = ""
+#"download" = ""
+#"tracker" = ""
+
+[project.scripts]
+guide = "Guide_LaLu.guide:main"
