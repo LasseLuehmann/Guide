@@ -22,18 +22,12 @@ def pre_content(db=db):
     return content
 
 def for_database(com: str,pat, db=db):
-    content = []
     now = datetime.now()
-    dat= now.strftime('%-d/%-m/%Y')
-    tim = now.strftime('%-H:%-M')
     precon = pre_content(db)
-    for list in precon:
-        content.append(list)
-    strpat = str(pat)
-    content.append([dat, tim, strpat, com])
+    precon.append([now.strftime('%d/%m/%Y'), now.strftime('%H:%M'), str(pat), com])
     with open(db, mode= 'w') as destin:
         save = csv.writer(destin)
-        save.writerows(content)
+        save.writerows(precon)
 
 def path_finder(object: str, com: str, here=Path('/home')):
     """ This function takes the requested object and tries to find it

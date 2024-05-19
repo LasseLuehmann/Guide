@@ -11,7 +11,7 @@ def main() -> None:
     parser.add_argument('-l', '--ls', action='store_true', help='display all non hidden content of the provided direction')
     parser.add_argument('-la', '--lsall', action='store_true', help='display all content of the provided direction including hidden')
     parser.add_argument('-p', '--pwd', action='store_true', help='display the Path of the provided direction')
-    parser.add_argument('-j', '--journey', action='store_true', help='prints your searcing history')
+    parser.add_argument('-j', '--journey', action='store_true', help='prints your searching history')
     parser.add_argument('-x', '--exterminate', action='store_true', help='used delete your history')
 
     args = parser.parse_args()
@@ -21,7 +21,7 @@ def main() -> None:
     elif args.journey:
         data = pre_content()
         for row in data:
-            print(f'|{row[0]}\t|{row[1]}\t\t|{row[2]}\t\t|{row[3]}\n','-'*100)
+            print(f'| {row[0]}\t| {row[1]}\t\t| {row[2]}\t\t| {row[3]}\n','-'*100)
     elif args.exterminate:
         create_new_database()
         print('Your histoy was successfully deleted!')
