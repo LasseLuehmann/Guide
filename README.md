@@ -8,7 +8,7 @@ The programm itself takes two arguments
    1. the command you would like to use.
       - pwd: `-p | --pwd`
       - code: `-c | --code`
-      - ls: `-l | --ls`
+      - ls: `-l | --ls` -> ls -a: `-la | --lsall`
       - version: `-v | --version`
    2. the package/module wich you are searching for 
 
