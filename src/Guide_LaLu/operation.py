@@ -4,13 +4,28 @@ import re
 import csv
 from datetime import datetime
 
-db = Path.joinpath(Path.cwd(), 'src', 'Guide_LaLu', 'journey.csv')
+database = Path.joinpath(Path.home(), 'Guide_LaLu_database')
+file = Path.joinpath(database, 'journey.csv')
 
-def create_new_database(db=db):
+def create_database(database=database, file=file):
+    if Path.exists(file):
+        db = file
+        return db
+    elif Path.exists(database):
+        db = file
+        return db
+    else:
+        os.system(f'mkdir {database} && cd {database} && touch journey.csv')
+        with open(file, mode='w') as new_db:
+            csv.writer(new_db).writerow(['Date    ', 'Time', 'Command    ','Path'])
+        db = file
+        return db
+
+def create_new_database(db=create_database()):
     with open(db, mode='w') as new_db:
         csv.writer(new_db).writerow(['Date    ', 'Time', 'Command    ','Path'])
         
-def pre_content(db=db):
+def pre_content(db=create_database()):
     content = []
     with open(db) as precon:
         while line := precon.readline():
@@ -21,7 +36,7 @@ def pre_content(db=db):
                 content.append([sepline[0], sepline[1], sepline[2], sepline[3].strip('\n')])
     return content
 
-def for_database(com: str,pat, db=db):
+def for_database(com: str,pat, db=create_database()):
     now = datetime.now()
     precon = pre_content(db)
     precon.append([now.strftime('%d/%m/%Y'), now.strftime('%H:%M'), str(pat), com])
@@ -29,7 +44,7 @@ def for_database(com: str,pat, db=db):
         save = csv.writer(destin)
         save.writerows(precon)
 
-def path_finder(object: str, com: str, here=Path('/home')):
+def path_finder(object: str, com: str, here=Path.home()):
     """ This function takes the requested object and tries to find it
     in your data. It takes also the command wich should be excecuted to provid it 
     to the next function. The search starts from the home directory. 
