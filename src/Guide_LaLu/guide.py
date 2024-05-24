@@ -4,8 +4,12 @@ from .operation import path_finder, pre_content, create_new_database, create_dat
 
 def main() -> None:
 
-    parser = argparse.ArgumentParser(description= ' provides a search engine for your terminal')
+    parser = argparse.ArgumentParser(description= 
+         (' provides a search engine for your terminal'
+         'Syntax: guide <your option> <the name wich you are searching for>'
+         'guide -p Guide'))
 
+    parser.add_argument('path', nargs='*')
     parser.add_argument('-v', '--version', action='store_true', help='version of Guide LaLu')
     parser.add_argument('-c', '--code', action='store_true', help='start your editor in the provided direction')
     parser.add_argument('-l', '--ls', action='store_true', help='display all non hidden content of the provided direction')
@@ -15,34 +19,39 @@ def main() -> None:
     parser.add_argument('-x', '--exterminate', action='store_true', help='used delete your history')
 
     args = parser.parse_args()
+    object = None
 
     create_database()
 
     if args.version:
-        print(__version__)
+        print('','-'*7,'\n|',__version__,'|','\n','-'*7)
     elif args.journey:
         data = pre_content()
         for row in data:
             print(f'| {row[0]}\t| {row[1]}\t\t| {row[2]}\t\t| {row[3]}\n','-'*100)
     elif args.exterminate:
         create_new_database()
-        print('Your histoy was successfully deleted!')
+        print('','-'*38,'\n|','Your histoy was successfully deleted!|','\n','-'*38)
     else:
-        object = input('Where do you want to go: ')
-        if args.code:
-            com = 'code'
-            path_finder(object, com)
-        elif args.ls:
-            com = 'ls'
-            path_finder(object, com)
-            print('','-'*70,'\n')
-        elif args.lsall:
-            com = 'ls -a'
-            path_finder(object, com)
-            print('','-'*70,'\n')
-        elif args.pwd:
-            com = 'pwd'
-            print(f'{path_finder(object, com)}','\n','-'*70,'\n')
+        for name in args.path:
+            object = name
+        if object:
+            if args.code:
+                com = 'code'
+                path_finder(object, com)
+            elif args.ls:
+                com = 'ls'
+                path_finder(object, com)
+                print('','-'*70,'\n')
+            elif args.lsall:
+                com = 'ls -a'
+                path_finder(object, com)
+                print('','-'*70,'\n')
+            elif args.pwd:
+                com = 'pwd'
+                print(f'{path_finder(object, com)}','\n','-'*70,'\n')
+        else:
+            print('no object found: please provide a object for the search!')
     
 
 if __name__ == '__main__':

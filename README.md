@@ -1,9 +1,5 @@
-# 0.0.6 New Features
-> aditional subcommand for `-l`: `-la` or `--lsall` wich will list also hidden files and directorys
-
-> added history database: with `-j` you are now able to display all of your searches with `Date, Time, Command and Path`
-
-> reset of the history: with `-x` you are able to delete your whole history
+# 0.0.8 New Features
+> fixed the database issue: a folder and a csv file will be created in the home diectory to contain the database
 
 # Guide
 
@@ -45,7 +41,13 @@ regex syntax are for example
 - `\w`: any alphanumeric charecters
 - `\W`: any charecter that is not represented with `\w`
 - `\d`: any digit
+- `^`: startswith
+- `$`: endswith
+- `*`: 0 to infinite
+- `+`: 1 to infinite
+
 If you are uncertain how the name is spelled or seperated you can concider these options.
+> Remember: in order to use a backslash `\` you have double it like `\\W`
 
 ### Imports used
 
