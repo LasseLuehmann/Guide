@@ -1,5 +1,11 @@
-# 0.0.8 New Features
-> fixed the database issue: a folder and a csv file will be created in the home diectory to contain the database
+# 0.0.9 New Features
+> improved docstrings within the basecode
+
+> compressed and seperated utilityes of dartabase related fuctions
+
+> add 'mv' command wich is used to rename a certain file/folder to a new provided name
+
+> add 'mv -t' command wich is used to place a certain file/folder to an other new directory
 
 # Guide
 
@@ -16,6 +22,7 @@ The programm itself takes a option and then ask for the name wich your are sarci
       - pwd: `-p | --pwd`
       - code: `-c | --code`
       - ls: `-l | --ls` -> ls -a: `-la | --lsall`
+      - mv: `-m | --mv` -> mv -t: `-mt | --mvto`
       - version: `-v | --version`
       - history: `-j | --journey`
       - delete: `-x | exterminate`

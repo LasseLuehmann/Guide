@@ -1,4 +1,9 @@
-__version__ = '0.0.8'
+__version__ = '0.0.9'
 
-# if __name__ == '__main__':
-#     print(__version__)
+"""
+Version 0.0.9
+- improved Docstrings in operation.py
+- compressed and seperated utilityes of dartabase related fuctions
+- add 'mv' command
+- add 'mv -t' command
+"""
