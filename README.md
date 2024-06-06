@@ -1,11 +1,7 @@
-# 0.0.9 New Features
-> improved docstrings within the basecode
+# 0.0.10 New Features
+> fixed the problem with the mv command
 
-> compressed and seperated utilityes of dartabase related fuctions
-
-> add 'mv' command wich is used to rename a certain file/folder to a new provided name
-
-> add 'mv -t' command wich is used to place a certain file/folder to an other new directory
+> if there is no match the programm ask for an alternative name instead of giving an error
 
 # Guide
 

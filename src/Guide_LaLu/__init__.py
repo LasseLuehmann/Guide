@@ -1,9 +1,7 @@
-__version__ = '0.0.9'
+__version__ = '0.0.10'
 
 """
-Version 0.0.9
-- improved Docstrings in operation.py
-- compressed and seperated utilityes of dartabase related fuctions
-- add 'mv' command
-- add 'mv -t' command
+Version 0.0.10
+- fixed the problem with the mv command
+- if there is no match the programm ask for an alternative name instead of giving an error
 """

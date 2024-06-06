@@ -81,6 +81,8 @@ def folder_search(cache: list, com: str):
         return cache[int(ask)-1], com
     else:
         print('No match for your choice')
+        new_object = input ('Please try again: ')
+        return path_finder(object=new_object, com=com)
 
 def path_changer(path: Path, com: str):
     """ This function anilyse wich command is requested. Depending on that it will excecute
@@ -128,7 +130,8 @@ def execute_mv(upath: Path, com: str):
     Related to '-m'
     """
     new_name = input('how would you like to call your destiny: ')
-    order = com + ' ' + str(upath.name) + ' ' + new_name
+    new_dir = Path.joinpath(upath.parent, new_name)
+    order = com + ' ' + str(upath) + ' ' + str(new_dir)
     return os.system(order)
 
 def execute_mvto(upath: Path, com: str):

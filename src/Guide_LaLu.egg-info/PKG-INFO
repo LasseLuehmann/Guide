@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: Guide_LaLu
-Version: 0.0.9
+Version: 0.0.10
 Summary: A Guide to find your stuff in terminal
 Author-email: Lasse Lühmann <waffl669@yahoo.de>
 Keywords: elongated arm,user
@@ -13,14 +13,10 @@ Requires-Python: >=3.10
 Description-Content-Type: text/markdown
 License-File: LICENCE
 
-# 0.0.9 New Features
-> improved docstrings within the basecode
+# 0.0.10 New Features
+> fixed the problem with the mv command
 
-> compressed and seperated utilityes of dartabase related fuctions
-
-> add 'mv' command wich is used to rename a certain file/folder to a new provided name
-
-> add 'mv -t' command wich is used to place a certain file/folder to an other new directory
+> if there is no match the programm ask for an alternative name instead of giving an error
 
 # Guide
 
